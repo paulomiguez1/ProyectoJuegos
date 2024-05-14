@@ -2,13 +2,33 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Interfaz que define métodos para obtener información sobre juegos.
+ */
 interface JuegoService {
+    /**
+     * Obtiene una lista de todos los juegos disponibles.
+     *
+     * @return La lista de juegos disponibles.
+     */
     List<Juego> getJuegos();
+    /**
+     * Obtiene un juego específico por su identificador.
+     *
+     * @param id El identificador del juego.
+     * @return El juego correspondiente al identificador dado.
+     */
     Juego getJuegoPorId(int id);
 }
-
+/**
+ * Implementación de la interfaz {@code JuegoService}.
+ */
 class JuegoServiceImpl implements JuegoService {
     private List<Juego> juegos;
+
+    /**
+     * Constructor que inicializa la lista de juegos con algunos juegos predefinidos.
+     */
 
     public JuegoServiceImpl() {
         juegos = new ArrayList<>();
@@ -28,9 +48,18 @@ class JuegoServiceImpl implements JuegoService {
     }
 }
 
+/**
+ * Clase principal que gestiona la interacción con el usuario para seleccionar y mostrar información sobre juegos.
+ */
 public class ManejadorJuegos {
     private static JuegoService juegoService = new JuegoServiceImpl();
 
+    /**
+     * Método principal que muestra los juegos disponibles, solicita al usuario que seleccione un juego
+     * y muestra la información del juego seleccionado.
+     *
+     * @param args Argumentos de la línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         // Mostrar los juegos disponibles
         System.out.println("Juegos Disponibles:");

@@ -8,7 +8,7 @@ public class ManejadorJuegosTest {
     @Test
     public void testSeleccionInvalida() {
         // Simula la entrada del usuario con un número fuera de rango
-        String input = "5\n"; // supongamos que solo hay 3 juegos
+        String input = "5\n"; //solo hay 3 juegos
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
         // Captura la salida del sistema
